@@ -22,13 +22,48 @@
 @import url('normalize.css');
 
 /* 2. General Styles */
+html {
+    box-sizing: border-box;
+   }
+   
+*, *:before, *:after{
+    box-sizing: inherit;
+   }
+
 body{
     font-family: Helvetica, sans-serif;
+    font-size: 20px;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: Sansita, sans-serif;
+    font-family: sansita, Eurostyle, sans-serif;
+}
+
+.tile{
+    background-color: rgba(200,200,200,.6);
+  margin: .2em auto;
+  border: 1px solid;
+  border-radius: 15px;
 }
 
 /* 3. Mobile First*/
+nav ul li { 
+    display: inline-block; 
+    list-style: none; 
+  }
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+footer{
+    margin-bottom: 2em;
+   }
+
+#site-brand {
+    font-size: 2em;
+    font-weight: 600;
+  }
 
 
