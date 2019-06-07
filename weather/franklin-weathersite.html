@@ -1,58 +1,46 @@
 <!doctype html>
 <html lang="en-us">
  <head id="the-weather-site">
-  <meta charset="UTF-8">
-  <title id="page-title">&#9748; The Weather Site</title>
-  <meta name="description" content="This page provides weather information for Franklin, ID.">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/weather/css/screen.css" media="screen"> 
+    <meta charset="UTF-8">
+    <title id="page-title">&#9748; The Weather Site</title>
+    <meta name="description" content="This page provides weather information for Franklin, ID.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen"> 
  </head>
  <body>
     <header>
-        <div id="logo">&#9748;</div>
-        <p id="site-brand">The Weather Site</p>
+        <p id="site-brand">&#9748;The Weather Site</p>
     </header>
     <main>
 
         <section id="location-indicator">
-        <h2>Franklin, Idaho</h2>
+        <h1>Franklin, Idaho</h1>
             <p><b>Zip:</b> 83237 | <b>Elevation</b>: 1514.246 m | <b>Location</b>: 111.79&#176; N, 42.07&#176; W</p>
         </section>
 
         <section id="temperature-indicator" class="tile">
-        <nav>
-        <h2>Temperature</h2>
-            <span id="hi">64&deg</span>
-            <span id="lo">41&deg</span>
-        <img src="/kyah15.github.io/weather/images/weather-tile.png" alt="Weather in Franklin Now">
-        </nav>
+            <h2>Temperature</h2>
+            <img src="images/weather-tile.png" alt="Weather in Franklin Now">
         </section>
         
         <section id="wind-indicator" class="tile">
-        <nav>
-        <h2>Wind</h2>
-        <img src="/kyah15.github.io/weather/franklin-images/wind-pointer.png" alt="Wind Direction Pointer">
+            <h2>Wind</h2>
+            <img src="franklin-images/wind-pointer.png" alt="Wind Direction Pointer">
             <ul>
-            <li id="wind-speed"><b>Wind Speed</b>: 5 mph</li>
+            <p id="wind-speed"> 5 mph</p><br>
             <li id="direction"><b>Direction</b>: SW</li>
             <li id="gusts"><b>Gusts</b>: 10-12 mph</li>
             </ul>
-        </nav>
         </section>
         
         <section id="clear-indicator" class="tile">
-        <nav>
-        <h2>Clear</h2>
-        <img src="/kyah15.github.io/weather/franklin-images/clear.jpg" alt="clear-day-picture">
-        </nav>
-        <nav>
+            <h2>Clear</h2>
+            <img src="franklin-images/clear.jpg" alt="clear-day-picture">
         </section>
         
         <section id="hourly-forecast">
-        <h2>Hourly Forecast</h2>
-            <p>10am: 41&#176; F |11am: 41&#176; F |12pm: 41&#176; F |1pm: 41&#176; F |2pm: 41&#176; F 
-                |3pm: 41&#176; F |4pm: 42&#176; F |5pm: 44&#176; F |6pm: 44&#176; F |7pm: 46&#176; F |8pm: 49&#176; F |9pm: 51&#176; F |10pm: 55&#176; F |</p>
-        </nav>
+            <h2>Hourly Forecast</h2>
+            <p>10am: 41&#176; F |11am: 41&#176; F |12pm: 41&#176; F |1pm: 41&#176; F |2pm: 41&#176; F |3pm: 41&#176; F |4pm: 42&#176; F |5pm: 44&#176; F |6pm: 44&#176; F |7pm: 46&#176; F |8pm: 49&#176; F |9pm: 51&#176; F |10pm: 55&#176; F |</p>
         </section>
                
     </main>

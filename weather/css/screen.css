@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css?family=Sansita&display=swap');
 
 /* 1.2 Google fonts */
-@import url('normalize.css');
+ @import url('normalize.css');
 
 /* 2. General Styles */
 html {
@@ -28,6 +28,8 @@ html {
    
 *, *:before, *:after{
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
    }
 
 body{
@@ -39,10 +41,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .tile{
-    background-color: rgba(200,200,200,.6);
+  background-color: rgba(200,200,200,.6);
   margin: .2em auto;
   border: 1px solid;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  background-color: blue;
 }
 
 /* 3. Mobile First*/
@@ -59,11 +68,19 @@ nav {
 
 footer{
     margin-bottom: 2em;
+    background-color: blue;
+    font-weight: bold;
    }
 
 #site-brand {
     font-size: 2em;
     font-weight: 600;
   }
+
+img {
+  max-width: 385px;
+  }
+
+  /* 4. Large Screen */
 
 
