@@ -87,9 +87,26 @@ footer{
   }
 
 img {
-  max-width: 385px;
+  max-width: 354px;
   }
 
+
+  #wind-speed{
+    position: relative;
+    text-align: center;
+  }
+
+  #speed{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #hourly-forecast{
+    overflow: scroll;
+    white-space: nowrap;
+  }
   /* 4. Large Screen */
 
 
