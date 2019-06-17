@@ -52,12 +52,43 @@ h1, h2, h3, h4, h5, h6{
 
 .tile{
   background-color: rgba(200,200,200,.6);
+  background-size: cover;
   margin: .2em auto;
   border: 1px solid;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.clear-class{
+  background-image: url("clear-optimized-400px.jpg");
+  background-size: cover;
+  min-height: 290px;
+}
+
+.clouds-class{
+  background-image: url("clouds-optimized-400px.jpg");
+  background-size: cover;
+  min-height: 290px;
+}
+
+.fog-class{
+  background-image: url("fog-optimized-400px.jpg");
+  background-size: cover;
+  min-height: 290px;
+}
+
+.rain-class{
+  background-image: url("rain-optimized-400px.jpg");
+  background-size: cover;
+  min-height: 290px;
+}
+
+.snow-class{
+  background-image: url("snow-optimized-400px.jpg");
+  background-size: cover;
+  min-height: 290px;
 }
 
 header{
@@ -164,7 +195,7 @@ img {
     transform: translate(-50%, -50%);
   }
 
-  #hourly-forecast{
+  #hourly-temps{
     overflow: scroll;
     white-space: nowrap;
   }

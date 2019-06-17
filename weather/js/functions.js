@@ -13,6 +13,18 @@ buildWC(speed, temp);
 const direction = "ESE";
 windDial(direction);
 
+// Variables for getCondition function
+const weatherCondition = "Foggy";
+const conditionKeyWord = getCondition(weatherCondition);
+console.log(conditionKeyWord);
+
+// Call changeSummaryImage function
+changeSummaryImage(conditionKeyWord);
+
+// Variables for convertMeters function
+const elevation = 1514.246;
+convertMeters(elevation);
+
 // Calculate the windchill temperature
 function buildWC(speed, temp){
     const feelTemp = document.getElementById('feels-span');
@@ -80,4 +92,83 @@ function windDial(direction){
         dial.setAttribute("class", "w");
         break;
    }
+}
+
+// Determine the weather condition for today
+function getCondition(condition){
+
+// Get the condition
+    let indicator = "clear";
+    console.log(condition);
+
+// Determine the condition and store it in a local variable
+    switch (condition){
+        case "Clear":
+        case "Sunny":
+        indicator = "clear";
+        break;
+        case "Partly Cloudy":
+        case "Cloudy":
+        case "Clouds":
+        indicator = "clouds";
+        break;
+        case "Foggy":
+        case "Fog":
+        indicator = "fog";
+        break;
+        case "Rainny":
+        case "Rain":
+        indicator = "rain";
+        break;
+        case "Snowy":
+        case "Snow":
+        indicator = "snow";
+        break;
+    }
+    console.log(indicator);
+    return indicator;
+}
+
+function changeSummaryImage(weatherCondition){
+
+// Get the weather condition
+    const backgroundImage = document.getElementById("clear-indicator");
+    console.log(weatherCondition);
+
+// Determine the dial class
+    switch (weatherCondition){
+        case "clear":
+        backgroundImage.setAttribute("class", "tile clear-class"); //"n" is the CSS rule selector
+        break;
+        case "clouds":
+        backgroundImage.setAttribute("class", "tile clouds-class");
+        break;
+        case "fog":
+        backgroundImage.setAttribute("class", "tile fog-class");
+        break;
+        case "rain":
+        backgroundImage.setAttribute("class", "tile rain-class");
+        break;
+        case "snow":
+        backgroundImage.setAttribute("class", "tile snow-class");
+        break;
+    }
+}
+
+// Convert meters to feet
+function convertMeters(elevation){
+    const ftelevation = document.getElementById('elevation-span');
+
+// Compute the elevation in feet
+    let feetElevation = elevation * 3.281;
+    console.log(feetElevation);
+
+// Round the answer down to integer
+    feetElevation = Math.floor(feetElevation);
+
+// Display the elevation in Feet
+    console.log(feetElevation);
+
+// Display the elevation in HTML file
+    ftelevation.innerHTML = feetElevation + ' ft.';
 }
