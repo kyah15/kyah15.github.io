@@ -20,14 +20,16 @@
 
         <section id="temperature-indicator" class="tile">
             <h2>Temperature</h2>
-            <img src="images/weather-tile.png" alt="Weather in Franklin Now">
+            <p id="current-temperature">24&#176;F</p>
+            <p id="max-and-min-temps"><span id="max-temperature">34&#176;F </span><span id="min-temperature">21&#176;F</span></p>
+            <p id="feels-like-temp">Feels like <span id="feels-span">35&#176;F</span></p>
         </section>
         
         <section id="wind-indicator" class="tile">
             <h2>Wind</h2>
             
             <div id="wind-speed">
-                <img src="franklin-images/wind-pointer.png" alt="Wind Direction Pointer">
+                <img src="franklin-images/wind-pointer.png" alt="wind-direction-pointer" id="wind-pointer" class="w">
                 <div id="speed">5 mph</div>
             </div><br>
             <ul>
@@ -57,6 +59,7 @@
             <li><a href="#" title="Go to the Greenville page">Greenville</a></li>
         </ul>
     </nav>
-    </footer>   
+    </footer>
+    <script src="js/functions.js"></script>
  </body>
 </html>
