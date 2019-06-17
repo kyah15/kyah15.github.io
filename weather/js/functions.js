@@ -14,7 +14,7 @@ const direction = "ESE";
 windDial(direction);
 
 // Variables for getCondition function
-const weatherCondition = "Foggy";
+const weatherCondition = "Snowy";
 const conditionKeyWord = getCondition(weatherCondition);
 console.log(conditionKeyWord);
 
@@ -133,24 +133,30 @@ function changeSummaryImage(weatherCondition){
 
 // Get the weather condition
     const backgroundImage = document.getElementById("clear-indicator");
+    const summaryTitle = document.getElementById("summary-title");
     console.log(weatherCondition);
 
 // Determine the dial class
     switch (weatherCondition){
         case "clear":
         backgroundImage.setAttribute("class", "tile clear-class"); //"n" is the CSS rule selector
+        summaryTitle.innerHTML = 'Clear';
         break;
         case "clouds":
         backgroundImage.setAttribute("class", "tile clouds-class");
+        summaryTitle.innerHTML = 'Clouds';
         break;
         case "fog":
         backgroundImage.setAttribute("class", "tile fog-class");
+        summaryTitle.innerHTML = 'Fog';
         break;
         case "rain":
         backgroundImage.setAttribute("class", "tile rain-class");
+        summaryTitle.innerHTML = 'Rain';
         break;
         case "snow":
         backgroundImage.setAttribute("class", "tile snow-class");
+        summaryTitle.innerHTML = 'Snow';
         break;
     }
 }
