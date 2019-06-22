@@ -42,57 +42,36 @@ h1, h2, h3, h4, h5, h6{
     margin: .2em auto;
 }
 
-#location-indicator{
-  margin: .2em auto;
+#hourly-header{
+  text-align: center;
 }
 
-#location-paragraph{
-  font-size: 16px;
+#location-indicator{
+  margin: .2em auto;
 }
 
 .tile{
   background-color: rgba(200,200,200,.6);
   background-size: cover;
-  margin: .2em auto;
+  margin: .1em auto;
   border: 1px solid;
   border-radius: 15px;
+  min-width: 390px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.clear-class{
-  background-image: url("clear-optimized-400px.jpg");
+#hourly-forecast{
+  background-color: rgba(200,200,200,.6);
   background-size: cover;
-  min-height: 290px;
-}
-
-.clouds-class{
-  background-image: url("clouds-optimized-400px.jpg");
-  background-size: cover;
-  min-height: 290px;
-}
-
-.fog-class{
-  background-image: url("fog-optimized-400px.jpg");
-  background-size: cover;
-  min-height: 290px;
-}
-
-.rain-class{
-  background-image: url("rain-optimized-400px.jpg");
-  background-size: cover;
-  min-height: 290px;
-}
-
-.snow-class{
-  background-image: url("snow-optimized-400px.jpg");
-  background-size: cover;
-  min-height: 290px;
+  margin: .2em auto;
+  border: 1px solid;
+  border-radius: 15px;
 }
 
 header{
-  background-color: blue;
+  background-color: rgb(66, 66, 221);
 }
 
 #current-temperature{
@@ -124,6 +103,7 @@ header{
   margin: -.2em auto 0;
  }
 
+ /* 2.1 Code for ratation of wind pointer */
  .n {
   transform: rotate(0deg); 
  }
@@ -155,21 +135,100 @@ header{
  .nw {
   transform: rotate(315deg); 
  }
+
+ 
+
 /* 3. Mobile First*/
+
+@media only screen and (max-width: 600px) {
+
+#location-paragraph{
+  font-size: 12px;
+}
+
+/* 3.1 Code for background image based on weather. */
+
+.clear-class{
+  background-image: url("clear-optimized-400px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 200px;
+  border: none;
+}
+
+.clouds-class{
+  background-image: url("clouds-optimized-400px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 200px;
+  border: none;
+}
+
+.fog-class{
+  background-image: url("fog-optimized-400px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 200px;
+  border: none;
+}
+
+.rain-class{
+  background-image: url("rain-optimized-400px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 200px;
+  border: none;
+}
+
+.snow-class{
+  background-image: url("snow-optimized-400px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 200px;
+  border: none;
+}
+
+}
+
+
 nav ul li { 
     display: inline-block; 
     list-style: none; 
   }
 
 nav {
-    position: fixed;
     bottom: 0;
     left: 0;
   }
 
+  #top-nav{
+    background-color: rgb(66, 66, 221);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #page-nav{
+    background-color: rgb(66, 66, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li a{
+    color: white;
+    text-decoration: none;
+
+  }
+
+  nav ul li{
+    margin: 1em auto;
+    min-width: 90px;
+  }
+
 footer{
     margin-bottom: 2em;
-    background-color: blue;
+    background-color: rgb(66, 66, 221);
     font-weight: bold;
    }
 
@@ -200,5 +259,92 @@ img {
     white-space: nowrap;
   }
   /* 4. Large Screen */
+@media only screen and (min-width: 600px) {
 
+#location-paragraph{
+  font-size: 18px;
+}
+
+/* 3.1 Code for background image based on weather. */
+
+.clear-class{
+  background-image: url("clear-optimized-1200px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 220px;
+  border: none;
+}
+
+.clouds-class{
+  background-image: url("clouds-optimized-1200px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 220px;
+  border: none;
+}
+
+.fog-class{
+  background-image: url("fog-optimized-1200px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 220px;
+  border: none;
+}
+
+.rain-class{
+  background-image: url("rain-optimized-1200px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 220px;
+  border: none;
+}
+
+.snow-class{
+  background-image: url("snow-optimized-1200px.jpg");
+  background-size: cover;
+  min-width: 200px;
+  min-height: 220px;
+  border: none;
+}
+
+/* 3.2 Code for big screen alignment */
+
+  #columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tile{
+    min-width: 250px;
+    margin: 0;
+  }
+
+  #page-nav{
+    background-color: rgb(66, 66, 221);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #top-nav{
+    background-color: rgb(66, 66, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li a{
+    color: white;
+    text-decoration: none;
+
+  }
+
+  nav ul li{
+    margin: 1em auto;
+    min-width: 300px;
+  }
+
+
+  
+  }
 

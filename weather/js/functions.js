@@ -5,29 +5,29 @@
 console.log('My javascript is being read.');
 
 // Variables for windchill Function Use
-const temp = 31;
-const speed = 5;
+let temp = 31;
+let speed = 5;
 buildWC(speed, temp);
 
 // Variables for  wind pointer function
-const direction = "ESE";
+let direction = "ESE";
 windDial(direction);
 
 // Variables for getCondition function
-const weatherCondition = "Snowy";
-const conditionKeyWord = getCondition(weatherCondition);
+let weatherCondition = "Snowy";
+let conditionKeyWord = getCondition(weatherCondition);
 console.log(conditionKeyWord);
 
 // Call changeSummaryImage function
 changeSummaryImage(conditionKeyWord);
 
 // Variables for convertMeters function
-const elevation = 1514.246;
+let elevation = 1514.246;
 convertMeters(elevation);
 
 // Calculate the windchill temperature
 function buildWC(speed, temp){
-    const feelTemp = document.getElementById('feels-span');
+    let feelTemp = document.getElementById('feels-span');
 
 // Compute the windchill
     let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
@@ -50,7 +50,7 @@ function buildWC(speed, temp){
 function windDial(direction){
 
 // Get the wind dial container
-    const dial = document.getElementById("wind-pointer");
+    let dial = document.getElementById("wind-pointer");
     console.log(direction);
 
 // Determine the dial class
@@ -132,30 +132,36 @@ function getCondition(condition){
 function changeSummaryImage(weatherCondition){
 
 // Get the weather condition
-    const backgroundImage = document.getElementById("clear-indicator");
-    const summaryTitle = document.getElementById("summary-title");
+    let backgroundImage = document.getElementById("clear-indicator");
+    let frameBackgroundImage = document.getElementById("columns");
+    let summaryTitle = document.getElementById("summary-title");
     console.log(weatherCondition);
 
 // Determine the dial class
     switch (weatherCondition){
         case "clear":
-        backgroundImage.setAttribute("class", "tile clear-class"); //"n" is the CSS rule selector
+        backgroundImage.setAttribute("class", "tile clear-class");
+        frameBackgroundImage.setAttribute("class", "tile clear-class");
         summaryTitle.innerHTML = 'Clear';
         break;
         case "clouds":
         backgroundImage.setAttribute("class", "tile clouds-class");
+        frameBackgroundImage.setAttribute("class", "tile clouds-class");
         summaryTitle.innerHTML = 'Clouds';
         break;
         case "fog":
         backgroundImage.setAttribute("class", "tile fog-class");
+        frameBackgroundImage.setAttribute("class", "tile fog-class");
         summaryTitle.innerHTML = 'Fog';
         break;
         case "rain":
         backgroundImage.setAttribute("class", "tile rain-class");
+        frameBackgroundImage.setAttribute("class", "tile rain-class");
         summaryTitle.innerHTML = 'Rain';
         break;
         case "snow":
         backgroundImage.setAttribute("class", "tile snow-class");
+        frameBackgroundImage.setAttribute("class", "tile snow-class");
         summaryTitle.innerHTML = 'Snow';
         break;
     }
@@ -163,7 +169,7 @@ function changeSummaryImage(weatherCondition){
 
 // Convert meters to feet
 function convertMeters(elevation){
-    const ftelevation = document.getElementById('elevation-span');
+    let ftelevation = document.getElementById('elevation-span');
 
 // Compute the elevation in feet
     let feetElevation = elevation * 3.281;
