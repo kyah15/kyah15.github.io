@@ -5,7 +5,7 @@ let statusContainer = document.getElementById('status');
 let contentContainer = document.getElementById('main-content');
 
 // Variable for fechtData function and call of the function
-let weatherURL = "weather.json/weather.json";
+let weatherURL = "https://kyah15.github.io/weather/js/weather.json/weather.json";
 fetchData(weatherURL);
 
 // function to fecht the data
@@ -36,16 +36,30 @@ function fetchData(weatherURL){
     console.log('fullName is: '+fullName);
 
     // Get the temperature data
+    let currentTemp = g.Temp;
+    let lowTemp = g.Low;
+    let highTemp = g.High;
 
-
+    console.log("temp is "+currentTemp+", low temp is "+lowTemp+", high temp is "+highTemp);
     // Get the wind data 
+    let wind = g.Wind;
+    let windDirection = g.Direction;
+    let gusts = g.Gusts;
+    let summary = g.Summary;
+    buildWC(wind, currentTemp);
 
-
+    console.log("wind, direction, gusts and summary are: "+wind+" "+windDirection+" "+gusts+" "+summary);
     // Get the current conditions
+    let longitude = g.Longitude;
+    let latitude = g.Latitude;
+    let elevation = g.Elevation;
+    let zip = g.Zip; 
 
+    console.log("longitude, latitude, elevation and zip are "+longitude+" "+latitude+" "+elevation+" "+zip);
+    // Get the hourly data
+    let hourlyTemps = g.Hourly;
 
-    // Get the hourly data 
-
+    console.log("the hourly temperatures are "+hourlyTemps);
     // ************ Display the content ******************************
     // Set the title with the location name at the first
     // Gets the title element so it can be worked with
@@ -58,23 +72,50 @@ function fetchData(weatherURL){
     // Greenville, SC | The Weather Site
 
     // Set the Location information
+    let contentZip = document.getElementById('zip-code');
+    contentZip.innerHTML = zip;
+    convertMeters(elevation);
     // Get the h1 to display the city location
     let contentHeading = document.getElementById('contentHeading');
     contentHeading.innerHTML = fullName;
     // The h1 in main h1 should now say "Greenville, SC"
 
-
     // Set the temperature information
-
+    let contentCurrentTemp = document.getElementById('current-temperature');
+    let contentLowTemp = document.getElementById('min-temperature');
+    let contentHighTemp = document.getElementById('max-temperature');
+    let contentLongitude = document.getElementById('north-south');
+    let contentLatitude = document.getElementById('east-west');
+    contentCurrentTemp.innerHTML = currentTemp+String.fromCharCode(176)+"F";
+    contentLowTemp.innerHTML = lowTemp+String.fromCharCode(176)+"F";
+    contentHighTemp.innerHTML = highTemp+String.fromCharCode(176)+"F ";
+    contentLongitude.innerHTML = degreesNorthSouth(longitude);
+    contentLatitude.innerHTML = degreesEastWest(latitude);
 
     // Set the wind information
-
+    let contentWind = document.getElementById('speed');
+    let contentDirection = document.getElementById('direction');
+    let contentGusts = document.getElementById('gusts');
+    contentWind.innerHTML = wind+" mph";
+    contentDirection.innerHTML = windDirection;
+    contentGusts.innerHTML = gusts+" mph";
+    windDial(windDirection);
 
     // Set the current conditions information
+    let conditionKeyWord = getCondition(summary);
+    console.log(conditionKeyWord);
 
+    // Call changeSummaryImage function
+    changeSummaryImage(conditionKeyWord);
 
     // Set the hourly temperature information
-
+    // Variables for hourlyTemp functions
+    // Get the next hour based on the current time
+    let date = new Date(); 
+    let nextHour = date.getHours() + 1;
+    let contentHourlyTemps = document.getElementById('hourly-temps');
+    console.log("date and next hour are"+date+" "+nextHour);
+    contentHourlyTemps.innerHTML = buildHourlyData(nextHour, hourlyTemps);
 
     // Change the status of the containers
     contentContainer.setAttribute('class', ''); // removes the hide class

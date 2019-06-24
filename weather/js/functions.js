@@ -4,32 +4,6 @@
 
 console.log('My javascript is being read.');
 
-// Variables for windchill Function Use
-let temp = 31;
-let speed = 5;
-buildWC(speed, temp);
-
-// Variables for  wind pointer function
-let direction = "ESE";
-windDial(direction);
-
-// Variables for getCondition function
-let weatherCondition = "Snowy";
-let conditionKeyWord = getCondition(weatherCondition);
-console.log(conditionKeyWord);
-
-// Call changeSummaryImage function
-changeSummaryImage(conditionKeyWord);
-
-// Variables for convertMeters function
-let elevation = 1514.246;
-convertMeters(elevation);
-
-// Variables for hourlyTemp functions
-// Get the next hour based on the current time
-let date = new Date(); 
-let nextHour = date.getHours() + 1;
-
 // Calculate the windchill temperature
 function buildWC(speed, temp){
     let feelTemp = document.getElementById('feels-span');
@@ -123,6 +97,7 @@ function getCondition(condition){
         break;
         case "Rainny":
         case "Rain":
+        case "Thunderstorms":
         indicator = "rain";
         break;
         case "Snowy":
@@ -214,12 +189,36 @@ function buildHourlyData(nextHour,hourlyTemps) {
     // The hourlyTemps variable holds an array of temperatures
     // Line 8 builds a list item showing the time for the next hour 
     // and then the first element (value in index 0) from the hourly temps array
-     let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
+     let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F | </li>';
      // Build the remaining list items using a for loop
      for (let i = 1, x = hourlyTemps.length; i < x; i++) {
-      hourlyListItems += '<li>' + format_time(nextHour+i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+      hourlyListItems += '<li>' + format_time(nextHour+i) + ': ' + hourlyTemps[i] + '&deg;F | </li>';
      }
      console.log('HourlyList is: ' +hourlyListItems);
      return hourlyListItems;
+}
+
+// function to determine north or south
+
+function degreesNorthSouth(degrees) {
+    let locationDegrees;
+    if (degrees < 0) {
+        locationDegrees = Math.abs(degrees)+String.fromCharCode(176)+" S";
+    } else {
+        locationDegrees = degrees+String.fromCharCode(176)+" N";
+    }
+
+    return locationDegrees;
+}
+
+function degreesEastWest(degrees) {
+    let locationDegrees;
+    if (degrees < 0) {
+        locationDegrees = Math.abs(degrees)+String.fromCharCode(176)+" E";
+    } else {
+        locationDegrees = degrees+String.fromCharCode(176)+" W";
+    }
+
+    return locationDegrees;
 }
 

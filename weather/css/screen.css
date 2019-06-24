@@ -259,9 +259,15 @@ img {
   }
 
   #hourly-temps{
-    overflow: scroll;
     white-space: nowrap;
+    overflow: scroll;
   }
+
+  #hourly-temps li{
+    display: inline;
+  }
+
+
   /* 4. Large Screen */
 @media only screen and (min-width: 600px) {
 

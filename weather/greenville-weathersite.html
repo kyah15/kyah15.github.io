@@ -26,11 +26,11 @@
                 </nav>
 
         <section id="location-indicator">
-        <h1>Greenville, South Carolina</h1>
-            <p id="location-paragraph"><b>Zip:</b> 83237 | <b>Elevation</b>: <span id="elevation-span">1514.246</span> | <b>Location</b>: 111.79&#176; N, 42.07&#176; W</p>
+        <h1 id="contentHeading">Greenville, South Carolina</h1>
+            <p id="location-paragraph"><b>Zip:</b> <span id="zip-code">83237</span> | <b>Elevation</b>: <span id="elevation-span">1514.246</span> | <b>Location</b>: <span id="north-south">111.79&#176; N</span>, <span id="east-west">42.07&#176; W</span></p>
         </section>
 
-    <div id="columns" class id="clear-class">
+    <div id="columns" class="clear-class">
         <section id="temperature-indicator" class="tile">
             <h2>Temperature</h2>
             <p id="current-temperature">24&#176;F</p>
@@ -46,20 +46,20 @@
                 <div id="speed">5 mph</div>
             </div><br>
             
-            <p id="direction"><b>Direction</b>: SW</p>
-            <p id="gusts"><b>Gusts</b>: 10-12 mph</p>
+            <p id="wind-direction"><b>Direction</b>: <span id="direction">NW</span></p>
+            <p id="wind-gusts"><b>Gusts</b>: <span id="gusts">10-12 mph</span></p>
             
         </section>
         
         <section id="summary-section" class="tile">
             <h2 id="summary-title">Clear</h2>
-            <div id="clear-indicator" class="clear-class"></div>
+            <div id="clear-indicator" class="clouds-class"></div>
         </section>
     </div>
         
         <section id="hourly-forecast">
             <h2 id="hourly-header">Hourly Forecast</h2>
-            <p id="hourly-temps">10am: 41&#176; F |11am: 41&#176; F |12pm: 41&#176; F |1pm: 41&#176; F |2pm: 41&#176; F |3pm: 41&#176; F |4pm: 42&#176; F |5pm: 44&#176; F |6pm: 44&#176; F |7pm: 46&#176; F |8pm: 49&#176; F |9pm: 51&#176; F |10pm: 55&#176; F |</p>
+                <ul id="hourly-temps"></ul>
         </section>
                
     </main>
