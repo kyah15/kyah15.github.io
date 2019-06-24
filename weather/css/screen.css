@@ -103,6 +103,10 @@ header{
   margin: -.2em auto 0;
  }
 
+ .hide {
+   display: none;
+ }
+
  /* 2.1 Code for ratation of wind pointer */
  .n {
   transform: rotate(0deg); 

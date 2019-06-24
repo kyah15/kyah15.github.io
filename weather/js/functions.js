@@ -25,6 +25,11 @@ changeSummaryImage(conditionKeyWord);
 let elevation = 1514.246;
 convertMeters(elevation);
 
+// Variables for hourlyTemp functions
+// Get the next hour based on the current time
+let date = new Date(); 
+let nextHour = date.getHours() + 1;
+
 // Calculate the windchill temperature
 function buildWC(speed, temp){
     let feelTemp = document.getElementById('feels-span');
@@ -184,3 +189,37 @@ function convertMeters(elevation){
 // Display the elevation in HTML file
     ftelevation.innerHTML = feetElevation + ' ft.';
 }
+
+// Function to convert and format hours to 12 hour format.
+
+function format_time(hour) {
+    if(hour > 23){ 
+        hour -= 24; 
+    } 
+    let amPM = (hour > 11) ? "pm" : "am"; 
+    if(hour > 12) { 
+        hour -= 12; 
+    } 
+    if(hour == 0) { 
+        hour = "12"; 
+    } 
+    return hour + amPM;
+}
+
+// function to build hourly temperature list
+
+function buildHourlyData(nextHour,hourlyTemps) {
+    // Data comes from a JavaScript object of hourly temp name - value pairs
+    // Next hour should have a value between 0-23
+    // The hourlyTemps variable holds an array of temperatures
+    // Line 8 builds a list item showing the time for the next hour 
+    // and then the first element (value in index 0) from the hourly temps array
+     let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
+     // Build the remaining list items using a for loop
+     for (let i = 1, x = hourlyTemps.length; i < x; i++) {
+      hourlyListItems += '<li>' + format_time(nextHour+i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+     }
+     console.log('HourlyList is: ' +hourlyListItems);
+     return hourlyListItems;
+}
+

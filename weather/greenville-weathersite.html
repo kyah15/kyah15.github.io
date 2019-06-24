@@ -3,7 +3,7 @@
  <head id="the-weather-site">
     <meta charset="UTF-8">
     <title id="page-title">&#9748; The Weather Site</title>
-    <meta name="description" content="This page provides weather information for Franklin, ID.">
+    <meta name="description" content="This page provides weather information for Greenville, SC.">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen"> 
  </head>
@@ -11,7 +11,10 @@
     <header>
         <p id="site-brand">&#9748;The Weather Site</p>
     </header>
-    <main>
+
+    <section id="status">Please be patient while I get your weather information.</section>
+
+    <main id="main-content" class="hide">
 
             <nav id="top-nav">
                     <ul>
@@ -23,7 +26,7 @@
                 </nav>
 
         <section id="location-indicator">
-        <h1>Franklin, Idaho</h1>
+        <h1>Greenville, South Carolina</h1>
             <p id="location-paragraph"><b>Zip:</b> 83237 | <b>Elevation</b>: <span id="elevation-span">1514.246</span> | <b>Location</b>: 111.79&#176; N, 42.07&#176; W</p>
         </section>
 
@@ -72,5 +75,6 @@
     </nav>
     </footer>
     <script src="js/functions.js"></script>
+    <script src="js/localdata.js"></script>
  </body>
 </html>
