@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-us">
+ <head id="the-weather-site">
+    <meta charset="UTF-8">
+    <title id="page-title">&#9748; The Weather Site</title>
+    <meta name="description" content="This page provides weather information for Greenville, SC.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen"> 
+ </head>
+ <!-- Kevin Aguilar, Garret Matthews & Ezra Rojas -->
+ <body>
+    <header>
+        <p id="site-brand">&#9748;The Weather Site</p>
+    </header>
+    <nav id="top-nav">
+        <ul>
+            <li><a href="#" title="Go to the Current Weather Site page">Current</a></li>
+            <li><a href="#" title="Go to Search page">Search</a></li>
+        </ul>
+    </nav>
+
+    <section id="status">Please be patient while I get your weather information.</section>
+
+    <main id="main-content" class="hide">
+
+        <section id="location-indicator">
+        <h1 id="contentHeading"><span id="city">Greenville</span>, <span id="state">South Carolina</span></h1>
+            <p id="location-paragraph"><b>Zip:</b> <span id="zip-code">None</span> | <b>Elevation</b>: <span id="elevation-span">1514.246</span> | <b>Location</b>: <span id="north-south">111.79&#176; N</span>, <span id="east-west">42.07&#176; W</span></p>
+        </section>
+
+    <div id="columns" class="clear-class">
+        <section id="temperature-indicator" class="tile">
+            <h2>Temperature</h2>
+            <p id="current-temperature"><span id="currtemp">24</span>&#176;F</p>
+            <p id="max-and-min-temps"><span id="max-temperature">34&#176;F </span><span id="min-temperature">21&#176;F</span></p>
+            <p id="feels-like-temp">Feels like <span id="feels-span">35</span>&#176;F</p>
+        </section>
+        
+        <section id="wind-indicator" class="tile">
+            <h2>Wind</h2>
+            
+            <div id="wind-speed">
+                <img src="franklin-images/wind-pointer.png" alt="wind-direction-pointer" id="wind-pointer" class="w">
+                <div id="speed"><span id="speed-mph">5</span> mph</div>
+            </div><br>
+            
+            <p id="wind-direction"><b>Direction</b>: <span id="direction">NW</span></p>
+            <p id="wind-gusts"><b>Gusts</b>: <span id="gusts">10-12 mph</span></p>
+            
+        </section>
+        
+        <section id="summary-section" class="tile">
+            <h2 id="summary-title">Clear</h2>
+            <div id="clear-indicator" class="clouds-class"></div>
+        </section>
+    </div>
+        
+        <section id="hourly-forecast">
+            <h2 id="hourly-header">Hourly Forecast</h2>
+                <ul id="hourly-temps"></ul>
+        </section>
+               
+    </main>
+    <footer>
+    &copy;2019, The Weather Site
+    <nav id="page-nav">
+        <ul>
+            <li><a href="#" title="Go to the Current Weather Site page">Current</a></li>
+            <li><a href="#" title="Go to Search page">Search</a></li>
+        </ul>
+    </nav>
+    </footer>
+    <script src="js/functions.js"></script>
+    <script src="js/geo_loc.js"></script>
+ </body>
+</html>
