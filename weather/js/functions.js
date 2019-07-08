@@ -443,8 +443,7 @@ function buildPage(){
     const state = document.getElementById('state');
     state.innerHTML = storage.locState;
 
-    const elevation = document.getElementById('elevation-span');
-    elevation.innerHTML = storage.stationElevation;
+    convertMeters(storage.stationElevation);
 
     const longitude = document.getElementById('north-south');
     longitude.innerHTML = degreesNorthSouth(storage.long);
