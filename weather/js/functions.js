@@ -396,7 +396,44 @@ function buildPage(){
     windDirection.innerHTML = storage.windDirectionId;
 
     const windPointer = document.getElementById('wind-pointer');
-    
+    switch (storage.windDirectionId){
+        case "North":
+        case "N":
+        windPointer.setAttribute("class", "n"); //"n" is the CSS rule selector
+        break;
+        case "NE":
+        case "NNE":
+        case "ENE":
+        windPointer.setAttribute("class", "ne");
+        break;
+        case "NW":
+        case "NNW":
+        case "WNW":
+        windPointer.setAttribute("class", "nw");
+        break;
+        case "South":
+        case "S":
+        windPointer.setAttribute("class", "s");
+        break;
+        case "SE":
+        case "SSE":
+        case "ESE":
+        windPointer.setAttribute("class", "se");
+        break;
+        case "SW":
+        case "SSW":
+        case "WSW":
+        windPointer.setAttribute("class", "sw");
+        break;
+        case "East":
+        case "E":
+        windPointer.setAttribute("class", "e");
+        break;
+        case "West":
+        case "W":
+        windPointer.setAttribute("class", "w");
+        break;
+    }
     buildWC(storage.windSpeedId, convertToFarenheit(storage.currentTempId));
 
     // Task 2 - Populate location information
@@ -419,7 +456,60 @@ function buildPage(){
     const currentTemp = document.getElementById('currtemp');
     currentTemp.innerHTML = parseFloat(convertToFarenheit(storage.currentTempId)).toFixed(0);
 
-    const weatherSummary = document.getElementById('clear-indicator');
+    let indicator;
+
+    switch (storage.weatherSummaryId){
+        case "Clear":
+        case "Sunny":
+        indicator = "clear";
+        break;
+        case "Partly Cloudy":
+        case "Cloudy":
+        case "Clouds":
+        indicator = "clouds";
+        break;
+        case "Foggy":
+        case "Fog":
+        indicator = "fog";
+        break;
+        case "Rainny":
+        case "Rain":
+        case "Thunderstorms":
+        indicator = "rain";
+        break;
+        case "Snowy":
+        case "Snow":
+        indicator = "snow";
+        break;
+    }
+
+    switch (indicator){
+        case "clear":
+        backgroundImage.setAttribute("class", "tile clear-class");
+        frameBackgroundImage.setAttribute("class", "tile clear-class");
+        summaryTitle.innerHTML = 'Clear';
+        break;
+        case "clouds":
+        backgroundImage.setAttribute("class", "tile clouds-class");
+        frameBackgroundImage.setAttribute("class", "tile clouds-class");
+        summaryTitle.innerHTML = 'Clouds';
+        break;
+        case "fog":
+        backgroundImage.setAttribute("class", "tile fog-class");
+        frameBackgroundImage.setAttribute("class", "tile fog-class");
+        summaryTitle.innerHTML = 'Fog';
+        break;
+        case "rain":
+        backgroundImage.setAttribute("class", "tile rain-class");
+        frameBackgroundImage.setAttribute("class", "tile rain-class");
+        summaryTitle.innerHTML = 'Rain';
+        break;
+        case "snow":
+        backgroundImage.setAttribute("class", "tile snow-class");
+        frameBackgroundImage.setAttribute("class", "tile snow-class");
+        summaryTitle.innerHTML = 'Snow';
+        break;
+    }
 
     // Task 4 - Hide status and show main
     contentContainer.setAttribute('class', ''); // removes the hide class
