@@ -277,3 +277,5 @@ pageNav.addEventListener('click', function(evt){
     })
   // } Ends the function
   })
+
+  
