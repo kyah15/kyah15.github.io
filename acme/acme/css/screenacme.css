@@ -1,0 +1,55 @@
+/* /* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Put your name here
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices) */
+
+body{
+    background-image: url("images/site/background.jpg");
+}
+
+main{
+    background-color: white;
+}
+
+#top-header{
+  font-size: 110px;
+  color: red;
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#bottom-header{
+    font-size: 19px;
+    color: red;
+    margin: 0;
+    padding: 0;
+    font-family: Papyrus, fantasy;
+    font-weight: bold;
+  }
+
+  #content-title{
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  footer{
+    text-align: center;
+    font-size: 12px;
+    border-top: 5px solid black;
+    margin: 0;
+    padding: 0;
+  }
+
+/* *  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
