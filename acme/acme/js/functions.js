@@ -7,7 +7,7 @@ function buildTopNavigation (tabItems) {
     let navigationListTabs = '<li>' + 'Home' + '</li>';
 
     for (let i = 0, x = tabItems.length; i < x; i++) {
-        navigationListTabs += '<li>' + tabItems[i] + '</li>';
+        navigationListTabs += '<li>' + tabItems[i] + '</li>'; 
        }
        console.log('Tab Items are: ' + navigationListTabs);
        return navigationListTabs;
