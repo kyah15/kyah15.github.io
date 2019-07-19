@@ -12,6 +12,7 @@ body{
     background-image: url("images/site/background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    font-family: sansita, Eurostyle, sans-serif;
 }
 
 main{
@@ -28,7 +29,6 @@ main{
 }
 
 header{
-    margin: .2em auto;
     background-color: white;
     background-size: 100%;
   }
@@ -54,7 +54,6 @@ h2{
     font-weight: bold; 
     list-style: none;
     display: flex;
-    padding: .6em auto;
     margin: .3em auto;
   }
 
@@ -72,7 +71,6 @@ h2{
     color: white;
     display: flex;
     flex-direction: row;
-    align-items: left;
     font-size: 20px;
   }
 
@@ -113,9 +111,85 @@ h2{
     background-color: white;
   }
 
+#recipe-pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+#recipe-pictures > figure {
+  text-align: center;
+  background-color: gray;
+}
+
+figcaption {
+  background-color: white;
+}
+
+#recipe-pictures > figure > picture {
+  background-color: gray;
+
+}
+
+#product-picture{
+  padding: 15%;
+  margin: 5%;
+  max-width: 50%;
+  max-height: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* CSS to switch product image */
+.traps{
+  background-image: url("images/products/trap.jpg");
+}
+
+.anvil{
+  background-image: url("images/products/anvil.png");
+}
+
+.tnt{
+  background-image: url("images/products/tnt.png");
+}
+
+.roadrunner{
+  background-image: url("images/products/roadrunner.jpg");
+}
+
+.hide {
+  display: none;
+}
+
+.bold-spans{
+  font-weight: bold;
+}
+
+#description-paragraph{
+  margin-bottom:2%;
+}
+#price-paragraph{
+  margin-top:2%;
+  color: red;
+  font-weight: bold;
+  font-size: 300%;
+}
+
+#product-name{
+  font-size: 300%;
+}
+
 /*  3.  Mobile First (styles specific to small screens) */
 
 @media only screen and (max-width: 600px) {
+
+  body > *{
+    max-width: 90%;
+  }
+
+  header{
+    max-width: 90%;
+  }
 
   #acme-rocket-section{
     min-height: 180px;
@@ -144,6 +218,16 @@ h2{
     margin-top: 18px;
     margin-right: 18px;
   }
+
+  #mobile-home-sections{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #top-nav{
+    font-size: 80%;
+  }
+
 }
 /*  4.  Large Screen Styles (Media Queries begin here) */
 @media only screen and (min-width: 600px) {
@@ -152,4 +236,15 @@ h2{
     min-height: 306px;
     min-width: 600px;
   }
+
+  #mobile-home-sections{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #product-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
 }

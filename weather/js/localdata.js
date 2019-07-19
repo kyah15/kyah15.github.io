@@ -19,10 +19,10 @@ switch (cityName) {
 // Variable for fechtData function and call of the function
 let weatherURL = "https://kyah15.github.io/weather/js/weather.json/weather.json";
 
-// fetchData(weatherURL);
+fetchData(weatherURL);
 
 // function to fecht the data
-// function fetchData(weatherURL){
+function fetchData(weatherURL){
   // let cityName = 'Greenville'; // The data we want from the weather.json file
   fetch(weatherURL)
   .then(function(response) {
@@ -138,8 +138,9 @@ let weatherURL = "https://kyah15.github.io/weather/js/weather.json/weather.json"
   console.log('There was a fetch problem: ', error.message);
   statusContainer.innerHTML = 'Sorry, the data could not be processed.';
   })
-// } Ends the function
-})
+} 
+// Ends the function
+
 
 // Add function for bottom nav for small wireframe
 pageNav.addEventListener('click', function(evt){
